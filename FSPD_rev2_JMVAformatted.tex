@@ -110,7 +110,7 @@
 %\usepackage{numcompress}\bibliographystyle{model3-num-names}
 
 %% Vancouver name/year
-%\usepackage{numcompress}\bibliographystyle{model4-names}\biboptions{authoryear}
+%\usepackage{numcompress}\bibliographystyle{model4-names}
 
 %% APA style
 %\bibliographystyle{model5-names}\biboptions{authoryear}
@@ -120,6 +120,8 @@
 
 %% `Elsevier LaTeX' style
 %\bibliographystyle{elsarticle-num}
+%\bibliographystyle{elsarticle-num-names}
+%\bibliographystyle{elsarticle-num-names-alphsort}
 %%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -149,7 +151,7 @@ via linear shrinkage}
 \address[UMBC]{Department of Mathematics and Statistics, University of Maryland Baltimore County, 1100 Hilltop Circle, Baltimore, MD 21250, United States}
 
 
-\cortext[mycorrespondingauthor]{Corresponding author. Email address: \hyperref[mailto:johanlim@snu.ac.kr]{johanlim@snu.ac.kr}}
+\cortext[mycorrespondingauthor]{Corresponding author. Email address: \url{johanlim@snu.ac.kr}}
 \fntext[myfootnote]{The work was done while Young-Geun Choi was a Ph.D. student at the Seoul National University.}
 
 
@@ -223,6 +225,7 @@ assumed to be sparse or banded, one thresholds the elements of the sample covari
 or penalizes the Gaussian likelihood \citep{Bien2011,Lam2009}. The asymptotic theory of
 the regularized estimators are well understood
 and, particularly, they are shown to be consistent in estimating the true covariance matrix and its support (the positions of its non-zero elements).
+
 The main interest of this paper is positive definiteness (PDness) of covariance matrix estimator.
 The PDness is an essential property for the validity of many multivariate statistical procedures.
 However, the regularized covariance matrix estimators recently studied are often not PD in finite sample. This is because they more focus
@@ -427,7 +430,7 @@ The objective function is optimized via an alternating direction method of multi
 
 We conduct a small simulation study on the above PD-sparse covariance matrix estimators to understand their estimation performance and computational hardness.
  Table  \ref{table:timecomp0} lists empirical risks (estimation errors evaluated in matrix $\ell_1$, spectral, and Frobenius norms) and computation times of $\widehat{\bf \Sigma}^{\rm logdet}$, $\widehat{\bf \Sigma}^{\rm EigCon}$, and $\widehat{\bf \Sigma}^{\rm Soft}$, for a fixed tuning parameter, based on 100 replications from the same simulation settings as that used in  Figure \ref{figure:thresbanding}.
-Detailed settings of the simulation are given in Section \ref{sec:simulation}.
+%Detailed settings of the simulation are given in Section \ref{sec:simulation}.
 Both of the PD sparse covariance estimators show comparable performance to that of the soft thresholding estimator. %, which is shown to be rate-optimal \citep{Cai2012f}, in view of empirical risks.
 However, the computation  times of PD sparse estimators
  are substantially increased.
@@ -448,9 +451,9 @@ Eigen. constraint  & 18.92  & 7.45  & 25.92  & 100/100 & 4.93 \\
 log-det barrier  & 18.90  & 7.45  & 25.99  & 100/100  & 2.33 \\
 \hline				
 \end{tabular}
-\caption{Averaged empirical risks (estimation errors evaluated in matrix $\ell_1$, spectral, and Frobenius norms), frequency of positive definite estimates, and computing time (in seconds) for one fixed tuning parameter under 100 replications.
- Detailed settings of the simulation is given in Section \ref{sec:simulation}. The data is generated under
-$n=100$, $p=400$, MV-$t$ distribution, and ${\bf \Sigma}= {\bf M}_1$ which is defined  in Section \ref{sec:simulation}.
+\caption{Averaged empirical risks (estimation errors evaluated in matrix $\ell_1$, spectral, and Frobenius norms), frequency of positive definite estimates, and computing time (in seconds), for one fixed tuning parameter under 100 replications from the same simulation settings as that used in  Figure \ref{figure:thresbanding}.
+% Detailed settings of the simulation is given in Section \ref{sec:simulation}. The data is generated under
+%$n=100$, $p=400$, MV-$t$ distribution, and ${\bf \Sigma}= {\bf M}_1$ which is defined  in Section \ref{sec:simulation}.
 Computational convergence criteria is set as the relative error be smaller than $10^{-7}$.
 $\epsilon$ and $\tau$ are set as $10^{-2}$ for both the eigenvalue constraint method and the log-determinant barrier method.}
 \label{table:timecomp0}
@@ -542,7 +545,7 @@ Thus, we have the following lemma.
 %
 \noindent Lemma \ref{lemma:alpha} also implies that the smallest eigenvalue of the updated estimator is always $\epsilon$, because 
 $\gamma_1 \left\{ {\bf \Phi}_{\mu, \alpha}\big(\widehat{\bf \Sigma}\big) \right\}
-= \alpha^* \widehat{\gamma}_1 + (1 - \alpha^*) \mu = \epsilon$  for any $\mu \in [\epsilon, \infty)$. 
+= \alpha^* \widehat{\gamma}_1 + (1 - \alpha^*) \mu = \epsilon$.  %for any $\mu \in [\epsilon, \infty)$. 
 
 
 \subsection{The choice of $\mu$}\label{subsec:mu}
@@ -670,7 +673,7 @@ the choice of $\mu$. However, $\mu = \mu_{\rm SF}$ would be a preferable choice
 if one wants to minimize the Frobenius-norm distance from $\widehat{\bf \Sigma}$ while maintaining the
 spectral-norm distance as minimal.
 We remark that a special case of the proposed FSPD estimator has been briefly discussed
-by  \citet[Section 5.2]{Cai2014b}.
+by  \citet[Section 5.2]{Cai2016a}.
 In that study, the authors
 propose to modify the initial estimator $\widehat{\bf \Sigma}$ to
 $\widehat{\bf \Sigma} + (\epsilon - \widehat{\gamma}_{1}) {\bf I}$. This coincides with
@@ -732,7 +735,7 @@ In terms of spectral norm, Theorem \ref{prop:FSPDcov1} shows that the FSPD estim
 
 To discuss the convergence rate of the FSPD estimator in Frobenius norm, we further assume
 \[
-\textrm{(A2)}: \quad \frac{  |{\widehat{\gamma}}_1 - \gamma_1 |}{ \sqrt{\sum_{i=1}^p ({\widehat{\gamma}}_i - \gamma_i)^2 / p} } = O_p ( 1). 
+\mbox{{\bf(A2)}:} \quad \frac{  |{\widehat{\gamma}}_1 - \gamma_1 |}{ \sqrt{\sum_{i=1}^p ({\widehat{\gamma}}_i - \gamma_i)^2 / p} } = O_p ( 1). 
 \]
 The assumption {\bf (A2)} implies that, in the initial estimator, the estimation error of the smallest eigenvalue
 has the same asymptotic order with the averaged mean-squared error over all eigenvalues. It 
@@ -802,15 +805,15 @@ can be independently calculated from the whole spectrum by the Krylov subspace m
  algorithms are implemented using public and commercial software; for example, the built-in \textsf{MATLAB} function
  \texttt{eigs()}, which is based
  on \citet{Lehoucq1996} and \citet{Sorensen1990}, or a user-defined \textsf{MATLAB} function \texttt{eigifp()}
- \citep{Golub2002}, which is available online from the authors' homepage. During the simulation, we use
+ \citep{Golub2002}, which is available online from Q. Ye's personal webpage (\url{http://www.ms.uky.edu/~qye/}). During the simulation, we use
  \texttt{eigifp()} instead of \texttt{eigs()}, as \texttt{eigs()} fails to converge in the
  smallest eigenvalue computations for some matrices.
 The other functionals are  written as
-\begin{eqnarray}
-{\overline{\widehat{\gamma}}} &=& \sum_i \widehat{\gamma}_i / p = \tr(\widehat{\bf \Sigma}) / p \NN \\
-{\rm V}(\widehat{\gamma}) &=& \Big(\sum_i \widehat{\gamma}_i^2 / p \Big) - {\rm M}(\widehat{\gamma})^2 =
-\tr(\widehat{\bf \Sigma}^2)/p - \{\tr(\widehat{\bf \Sigma}) /p \}^2, \NN
-\end{eqnarray}
+\[
+{\overline{\widehat{\gamma}}} = \frac{1}{p} \sum_{i=1}^p \widehat{\gamma}_i = \frac{1}{p} \tr(\widehat{\bf \Sigma}), \qquad
+{\rm V}(\widehat{\gamma}) = \frac{1}{p} \sum_{i=1}^p \widehat{\gamma}_i^2 - {\rm M}(\widehat{\gamma})^2 =
+\frac{1}{p} \tr(\widehat{\bf \Sigma}^2) - \left\{\frac{1}{p} \tr(\widehat{\bf \Sigma}) \right\}^2, \NN
+\]
 and can
 be evaluated without the computation of the entire spectrum.
 
@@ -847,7 +850,7 @@ We consider two types of matrices as true ${\bf \Sigma}$ following \citet{Rothma
 the $(i,j)$-th element of $\bf A$);
 \item (``Overlapped block-diagonal'' matrix) $[{\bf M}_2]_{ij} := I(i = j) +  0.4 \, I \big( (i,j) \in (I_k \cup \{i_k + 1\}) \times (I_k \cup \{i_k + 1\}) \big)$, where the row (column) index $\{1, \ldots, p\}$ is partitioned into $K := p/20$ subsets, which are non-overlapping and of equal size, and $i_k$ denotes the maximum index in $I_k$.
 \ENUM
-We generate 100 datasets for each of the 36 possible combinations of distribution $\in \{$multivariate
+We generate 100 datasets for each of the 36 possible combinations: distribution $\in \{$multivariate
 normal, multivariate-$t\}$, $\bf \Sigma \in \{{\bf M}_1, {\bf M}_2\}$, $n \in \{100,200,400\}$, and $p \in \{100,200,400\}$.
 
 
@@ -860,7 +863,7 @@ The optimal threshold $\lambda^*$ is chosen from the five-fold cross-validation 
 \]
 where the soft thresholding estimator $\widehat{\bf{\Sigma}}_{\rm Train}^{\rm Soft}(\lambda)$ is obtained using the training dataset with a fixed tuning parameter $\lambda$ and the sample covariance matrix ${\bf S}_{\rm Test}$ is calculated using the testing dataset.
 The candidate set of $\lambda$ is 
- $\big\{ \frac{k}{100} \cdot \max_{i < j} |s_{ij}| \,:\, k = 0, \ldots, 100 \big\}$, a grid search from zero to the maximum mangnitude of sample covariances.
+ $\big\{ (k/100) \cdot \max_{i < j} |s_{ij}| \,:\, k = 0, \ldots, 100 \big\}$, a grid search from zero to the maximum mangnitude of sample covariances.
  
 
 First, we investigate the spectra of the soft thresholding estimator to understand
@@ -887,7 +890,7 @@ that PD-modification procedures are more frequently mandatory in more high-dimen
 \begin{center}
 \begin{tabular}{cc|ccc|ccc}
 \hline
-& & \multicolumn{3}{c|}{${\bf M}_1$: Tapered}& \multicolumn{3}{c}{${\bf M}_2$: Overlap. block diag.} \\
+& & \multicolumn{3}{c|}{${\bf \Sigma} = {\bf M}_1$}& \multicolumn{3}{c}{${\bf \Sigma} = {\bf M}_2$} \\
 $p$ & & Min. eig. & \#(Neg. eig.)/$p$ & \#(PD) & Min. eig. & \#(Neg. eig.)/$p$ & \#(PD)  \\
 \hline
  100 & $\mathcal{N}$  & -0.035 (0.004) & 0.017 (0.001) & 16/100 & 0.257 (0.003) & 0.000 (0.000) & 100/100 \\
@@ -936,8 +939,10 @@ are almost identical across the considered estimators.
 
 
 Now, we compare the empirical risks between the estimators. For the soft thresholding and FSPD approaches,
-The estimation errors of both FSPD($\mu_{\rm SF}$) and FSPD($\infty$) have lower risks (within 4\%) are lower than those of soft thresholding estimates in the spectral norm and higher in both the matrix $\ell_1$ and Frobenius norms;
-however, the increase in risk does not exceed 4\%. FSPD($\mu_{\rm SF}$) demonstrates up to 2\% greater empirical
+The estimation errors of both FSPD($\mu_{\rm SF}$) and FSPD($\infty$) 
+are lower in the spectral norm and higher in both the matrix $\ell_1$ and Frobenius norms than those of soft thresholding estimates;  however, the differences do not exceed 4\%.
+%have lower risks (within 4\%) are lower than those of soft thresholding estimates in the spectral norm and higher in both the matrix $\ell_1$ and Frobenius norms;
+FSPD($\mu_{\rm SF}$) demonstrates up to 2\% greater empirical
 risk than FSPD($\infty$) in all the three norms for normally distributed datasets but lower empirical risk
  (within 5\%) for $t$-distributed datasets.
 
@@ -970,19 +975,19 @@ and Frobenius norms.
 \hline
  & Matrix $\ell_1$ & Spectral & Frobenius & Matrix $\ell_1$ & Spectral & Frobenius \\
 \hline
-\multicolumn{7}{c}{${\bf M}_1$, $p = 100$} \\
+\multicolumn{7}{c}{${\bf \Sigma} = {\bf M}_1$, $p = 100$} \\
 Soft thres. & 6.21 (0.11)  & 3.59 (0.05)  & 7.18 (0.07) & 9.20 (0.35)  & 5.06 (0.12)  & 10.37 (0.17) \\
  FSPD($\mu_{\rm SF}$) & 6.20 (0.11)  & 3.59 (0.05)  & 7.25 (0.07) & 9.12 (0.34)  & 5.04 (0.12)  & 10.45 (0.17) \\
  FSPD($\infty$) & 6.20 (0.11)  & 3.56 (0.05)  & 7.21 (0.07) & 9.23 (0.35)  & 5.04 (0.13)  & 10.41 (0.17) \\
  EigCon & 6.21 (0.11)  & 3.59 (0.05)  & 7.18 (0.07) & 9.19 (0.34)  & 5.06 (0.12)  & 10.37 (0.17) \\
  log-det  & 6.21 (0.11)  & 3.59 (0.05)  & 7.22 (0.06) & 9.18 (0.34)  & 5.06 (0.12)  & 10.40 (0.17) \\
-\multicolumn{7}{c}{${\bf M}_1$, $p = 200$} \\
+\multicolumn{7}{c}{${\bf \Sigma} = {\bf M}_1$, $p = 200$} \\
 Soft thres. & 7.08 (0.08)  & 4.24 (0.04)  & 11.35 (0.06) & 13.40 (0.77)  & 6.25 (0.19)  & 17.18 (0.42) \\
  FSPD($\mu_{\rm SF}$) & 7.06 (0.08)  & 4.23 (0.04)  & 11.54 (0.05) & 13.12 (0.72)  & 6.18 (0.18)  & 17.49 (0.43) \\
  FSPD($\infty$) & 7.05 (0.08)  & 4.16 (0.04)  & 11.40 (0.05) & 13.51 (0.78)  & 6.24 (0.21)  & 17.40 (0.45) \\
  EigCon & 7.08 (0.08)  & 4.23 (0.04)  & 11.35 (0.06) & 13.29 (0.74)  & 6.25 (0.19)  & 17.18 (0.42) \\
  log-det  & 7.07 (0.08)  & 4.23 (0.04)  & 11.41 (0.05) & 13.28 (0.74)  & 6.25 (0.19)  & 17.23 (0.42) \\
-\multicolumn{7}{c}{${\bf M}_1$, $p = 400$} \\
+\multicolumn{7}{c}{${\bf \Sigma} = {\bf M}_1$, $p = 400$} \\
 Soft thres. & 7.91 (0.08)  & 4.72 (0.03)  & 17.75 (0.06) & 19.34 (1.12)  & 7.47 (0.30)  & 25.94 (0.40) \\
  FSPD($\mu_{\rm SF}$) & 7.86 (0.07)  & 4.71 (0.03)  & 18.14 (0.06) & 18.58 (1.02)  & 7.28 (0.28)  & 26.92 (0.51) \\
  FSPD($\infty$) & 7.93 (0.08)  & 4.62 (0.03)  & 17.86 (0.06) & 19.60 (1.15)  & 7.57 (0.34)  & 26.87 (0.57) \\
@@ -1003,7 +1008,7 @@ Soft thres. & 7.91 (0.08)  & 4.72 (0.03)  & 17.75 (0.06) & 19.34 (1.12)  & 7.47 
 %EigCon & 6.04 (0.05)  & 2.97 (0.03)  & 9.87 (0.03) & 9.52 (0.26)  & 4.04 (0.06)  & 14.54 (0.23) \\
 %log-det  & 6.04 (0.05)  & 2.97 (0.03)  & 9.87 (0.03) & 9.51 (0.26)  & 4.04 (0.06)  & 14.54 (0.23) \\
 
-\multicolumn{7}{c}{${\bf M}_2$, $p = 400$} \\
+\multicolumn{7}{c}{${\bf \Sigma} = {\bf M}_2$, $p = 400$} \\
 Soft thres. & 11.77 (0.10)  & 5.64 (0.05)  & 19.29 (0.07) & 19.67 (0.58)  & 7.44 (0.08)  & 27.91 (0.37) \\
  FSPD($\mu_{\rm SF}$) & 11.78 (0.10)  & 5.62 (0.05)  & 19.39 (0.07) & 19.10 (0.52)  & 7.31 (0.07)  & 28.23 (0.38) \\
  FSPD($\infty$) & 11.73 (0.10)  & 5.59 (0.05)  & 19.32 (0.07) & 19.83 (0.60)  & 7.39 (0.09)  & 28.32 (0.40) \\
@@ -1029,7 +1034,7 @@ The distribution is multivariate normal with the true covariance matrix
 ${\bf \Sigma}={\bf M}_1$ and ${\bf M}_2$. Here, $\lambda^*$ is selected as in
 Section \ref{subsec:emperrcomp}. The calculations in this Section are performed using \textsf{MATLAB} running
 on a computer with an Intel Core i7 CPU (3.4 GHz) and 16 GB RAM. Since the codes for both eigenvalue constraint and log-determinant methods are not available in \textsf{MATLAB}, we write the codes by ourselves.
-The two optimization-based estimators - the eigenvalue
+As those two optimization-based estimators - the eigenvalue
  constraint estimator and the log-determinant barrier estimator - are solved iteratively, and the convergence criteria is set as
   $\|\widehat{\bf \Sigma}^{\rm (New)} - \widehat{\bf \Sigma}^{\rm (Old)}\| / \|\widehat{\bf\Sigma}^{\rm (Old)}\| < 10^{-7}$. 
  We remark that, 
@@ -1057,7 +1062,7 @@ We also note that the empirical risks from both FSPD($\mu_{\rm SF}$) and FSPD($\
 \begin{center}
 \begin{tabular}{c|ccc|ccc}
 \hline
-&  \multicolumn{3}{c|}{${\bf M}_1$: Tapered}& \multicolumn{3}{c}{${\bf M}_2$: Overlap. block diag.} \\
+&  \multicolumn{3}{c|}{${\bf \Sigma} = {\bf M}_1$}& \multicolumn{3}{c}{${\bf \Sigma} = {\bf M}_2$} \\
  & $p=400$ & $p=1200$ & $p=3600$ & $p=400$ & $p=1200$ & $p=3600$ \\
  \hline
 Soft thres. & 0.00  & 0.02  &0.23  &0.00 &0.03 &0.24  \\
@@ -1163,7 +1168,7 @@ estimated from the sample means and covariance matrices are estimated from the f
  unlike the numerical study in Section \ref{sec:simulation}, we use the adaptive thresholding estimator as an initial
  regularized covariance estimator
  instead of the (universal) soft thresholding estimator. This is because marginal variances of the given data can
- be unequal over variables, in which case adaptive thresholding is known to perform better than the universal
+ be unequal over variables, in which case the adaptive thresholding is known to perform better than the universal
  thresholding \citep{Cai2011b}. The tuning parameter of the adaptive thresholding estimator is selected using
  the five-fold CV as in \citet{Cai2011b}.  We find that none among the 100 adaptive thresholding 
  estimates (from 100 random splitting of training and testing samples) are PD and, thus, the PD modification 
@@ -1241,7 +1246,7 @@ The combination of two constraints in (\ref{eqn:minvarnoshort}) ensures that the
 \citet{Jagannathan2003} empirically and analytically illustrate that (\ref{eqn:minvarnoshort})
 could have a smaller risk than (\ref{eqn:minvar})
 even if the no-short-sale constraint is wrong. We note that the paper handles only the case in which the sample
-covariance matrix is nonsingular and plugged into the unknown ${\bf \Sigma}$ in (\ref{eqn:minvarnoshort}). In principle, ${\bf \Sigma}$ can be replaced by a suitable PD estimator.
+covariance matrix is nonsingular and plugged into the unknown ${\bf \Sigma}$ in (\ref{eqn:minvarnoshort}). In principle, ${\bf \Sigma}$ can be replaced by any suitable PD estimator.
 
 
 \subsubsection{Example: Dow Jones stock return}
@@ -1347,9 +1352,7 @@ is composed of the records from previous 60 trading days at the time,
 both Adap. and POET estimates are PD in 53 cases 
 and PD modifications (both FSPD and EigCon) are applied to only 7 remaining non-PD cases, For the 240-day training (training with
 the records from 240 previous trading days), the PD updates are applied for only 14 case of the POET estimates which are not PD. 
-
-
-Finally, as the FSPD estimators are far simpler and faster than the eigenvalue constraint
+As the FSPD estimators are far simpler and faster than the eigenvalue constraint
 estimators, we claim that they are more desirable for practical use.
 
 
@@ -1387,7 +1390,7 @@ matrix estimator can preserve both the support and convergence rate.
 
 Several regularization methods are proposed for sparse precision matrices, and, like regularized covariance matrix estimation,
  some estimators do not guarantee PDness in  finite sample. Examples include CLIME
- by \citet{Cai2011}, neighborhood selection by \citet{Meinshausen2006}, SPACE by \citet{Peng2009}, symmetric lasso
+ by \citet{Cai2011}, the neighborhood selection by \citet{Meinshausen2006}, SPACE by \citet{Peng2009}, the symmetric lasso
  by \citet{Friedman2010}, and CONCORD by \citet{Khare2015}. In addition, penalized Gaussian likelihood methods,
  whose very definition ensures PDness of the solution, may have a solution lacking PDness, since the relevant optimization
  algorithms approximate solutions by a non-PD matrix. For instance, \citet{Mazumder2012} reports that the graphical
@@ -1409,7 +1412,7 @@ above are likely to be PD; thus, they suffer minimally from potential non-PDness
 \begin{center}
 \begin{tabular}{cc|cc|cc}
 \hline
-& & \multicolumn{2}{c|}{CONCORD}& \multicolumn{2}{c}{Symmetric lasso} \\
+& & \multicolumn{2}{c|}{CONCORD \citep{Khare2015}}& \multicolumn{2}{c}{The symmetric lasso  \citep{Friedman2010}} \\
 $p$ & & Min. eig. & \#(PD) & Min. eig. & \#(PD)  \\
 \hline
  100 & $\mathcal{N}$  & 2.49e-03 (2.44e-05) & 100/100 & 2.55e-03 (2.66e-05) & 100/100 \\
@@ -1448,7 +1451,7 @@ Our procedure is also applicable to non-PD correlation matrix estimator, althoug
 
 The FSPD procedure finds a PD matrix close to the initial estimator subject to the class
 of linear shrinkage estimators. Here, we conclude the paper with a discussion on the linear shrinkage
-constraint in the FSPD. Consider three classes of covariance matrices
+constraint in the FSPD. Consider three classes of covariance matrices,
  $\MC{S}_0 = \{ \widehat{\bf \Sigma}^* : \widehat{\bf \Sigma}^* = (\widehat{\bf \Sigma}^*)^{\top},
  \gamma_{1}(\widehat{\bf \Sigma}^*) \geq \epsilon \}$,
 $\MC{S}_1 = \{ \widehat{\bf \Sigma}^* \in \MC{S}_0 : {\rm supp}(\widehat{\bf \Sigma}^*) =
@@ -1491,8 +1494,11 @@ $\min_{\widehat{\bf \Sigma}^* \in \MC{S}_2} \|
 
  Second, in view of the Frobenius norm, we recall that  Lemma \ref{lemma:mufrob} tells
  $
- \min_{\widehat{\bf \Sigma}^* \in \MC{S}_2} \| \widehat{\bf \Sigma}^* - \widehat{\bf \Sigma} \|_{\rm F}  = (\epsilon - \widehat{\gamma}_{1}) \cdot
- \sqrt{ \sum_{i=1}^p ({\widehat{\gamma}}_i - {\overline{\widehat{\gamma}}})^2 / \sum_{i=1}^p ({\widehat{\gamma}}_i - {\widehat{\gamma}}_1)^2 },
+ \min_{\widehat{\bf \Sigma}^* \in \MC{S}_2} \| \widehat{\bf \Sigma}^* - \widehat{\bf \Sigma} \|_{\rm F}$  
+ $=$ 
+ $(\epsilon - \widehat{\gamma}_{1}) \cdot$
+ $\sqrt{ \sum_{i=1}^p ({\widehat{\gamma}}_i - {\overline{\widehat{\gamma}}})^2} /$  
+ $\sqrt{\sum_{i=1}^p ({\widehat{\gamma}}_i - {\widehat{\gamma}}_1)^2 },
  $
  whereas, in general,
  $
@@ -1519,222 +1525,430 @@ J.Lim's research is supported by National Research Foundation of Korea (Grant/Aw
 \bigskip
 
 
-%\bibliography{/Users/cyg/Dropbox/Documents/Papers/library.bib}
+
 
 \section*{References}
 
-\begin{thebibliography}{}
-\bibitem[Bai and Silverstein, 2010]{Bai2010}
-Bai, Z. and Silverstein, J.W. (2010).
-\newblock {\em Spectral Analysis of Large Dimensional Random Matrices},
-\newblock Springer, New York.
-\bibitem[Bickel and Levina, 2008a]{Bickel2008a}
-Bickel, P. and Levina, E. (2008a).
-\newblock {Covariance regularization by thresholding}.
-\newblock {\em The Annals of Statistics}, {\bf 36}(6), 2577--2604.
-\bibitem[Bickel and Levina, 2008b]{Bickel2008}
-Bickel, P.  and Levina, E. (2008b).
-\newblock {Regularized estimation of large covariance matrices}.
-\newblock {\em The Annals of Statistics}, {\bf 36}(1), 199--227.
-\bibitem[Bien and Tibshirani, 2011]{Bien2011}
-Bien, J. and Tibshirani, R. (2011).
-\newblock {Sparse estimation of a covariance matrix}.
-\newblock {\em Biometrika}, {\bf 98}(4), 807--820.
-\bibitem[Boyd et~al., 2010]{Boyd2010}
-Boyd, S., Parikh, N., Chu, E., Peleato, B., and Eckstein, J. (2010).
-\newblock {Distributed optimization and statistical learning via the
-  alternating direction method of multipliers}.
-\emph{Foundations and Trends in Machine Learning}, {\bf 3}(1), 1-122.
-\bibitem[Cai and Liu, 2011]{Cai2011b}
-Cai, T. and Liu, W. (2011).
-\newblock {Adaptive thresholding for sparse covariance matrix estimation}.
-\newblock {\em Journal of the American Statistical Association},
- {\bf 106}(494), 672--684.
-\bibitem[Cai et~al., 2011]{Cai2011}
-Cai, T., Liu, W., and Luo, X. (2011).
-\newblock {A constrained $\ell_1$ minimization approach to sparse precision
-  matrix estimation}.
-\newblock {\em Journal of the American Statistical Association},
-  {\bf 106}(494), 594--607.
-\bibitem[Cai and Low, 2015]{Cai2011a}
-Cai, T. and Low, M. (2015).
-\newblock {A framework for estimation of convex functions}.
-\emph{Statistica Sinica}, {\bf 25}, 423-456.
-\bibitem[Cai et~al., 2016]{Cai2014b}
-Cai, T., Ren, Z., and Zhou, H. (2016).
-\newblock {Estimating structured high dimensional covariance and precision
-  matrices: Optimal rates and adaptive estimation}.
-\newblock {\em Electronic Journal of Statistics}, {\bf 10}(1), 1--59.
-\bibitem[Cai and Yuan, 2012]{Cai2012c}
-Cai, T. and Yuan, M. (2012).
-\newblock {Adaptive covariance matrix estimation through block thresholding}.
-\newblock {\em The Annals of Statistics}, {\bf 40}(4), 2014--2042.
-\bibitem[Cai et~al., 2010]{Cai2010}
-Cai, T., Zhang, C.H., and Zhou, H. (2010).
-\newblock {Optimal rates of convergence for covariance matrix estimation}.
-\newblock {\em The Annals of Statistics}, {\bf 38}(4), 2118--2144.
-\bibitem[Cai and Zhou, 2012]{Cai2012f}
-Cai, T. and Zhou, H. (2012).
-\newblock {Optimal rates of convergence for sparse covariance matrix
-  estimation}.
-\newblock {\em The Annals of Statistics}, {\bf 40}(5), 2389--2420.
-\bibitem[Chan, 1999]{Chan1999}
-Chan, L. (1999).
-\newblock {On portfolio optimization: Forecasting covariances and choosing the risk model}.
-\newblock {\em Review of Financial Studies}, {\bf 12}(5), 937--974.
-\bibitem[Demmel, 1997]{Demmel1997}
-Demmel, J.W. (1997).
-\newblock {\em {Applied Numerical Linear Algebra}}.
-\newblock SIAM, Philadelphia, PA.
-\bibitem[Fan et~al., 2013]{Fan2013}
-Fan, J., Liao, Y., and Mincheva, M. (2013).
-\newblock {Large covariance estimation by thresholding principal orthogonal
-  complements}.
-\newblock {\em Journal of the Royal Statistical Society: Series B}, {\bf 75}(4), 603--680.
-\bibitem[Friedman et~al., 2008]{Friedman2008}
-Friedman, J., Hastie, T., and Tibshirani, R. (2008).
-\newblock {Sparse inverse covariance estimation with the graphical lasso.}
-\newblock {\em Biostatistics}, {\bf 9}(3), 432--441.
-\bibitem[Friedman et~al., 2010]{Friedman2010}
-Friedman, J., Hastie, T., and Tibshirani, R. (2010).
-\newblock {Applications of the lasso and grouped lasso to the estimation of
-  sparse graphical models}.
-\newblock Technical report, Stanford University, Stanford, CA.
-\bibitem[Golub and {Van Loan}, 2012]{Golub2012}
-Golub, G.H. and {Van Loan}, C.~F. (2012).
-\newblock {\em {Matrix Computations} (4th edition)}.
-\newblock Johns Hopkins University Press, Baltimore.
-\bibitem[Golub and Ye, 2002]{Golub2002}
-Golub, G.H. and Ye, Q. (2002).
-\newblock {An inverse free preconditioned Krylov subspace method for symmetric
-  generalized eigenvalue problems}.
-\emph{SIAM Journal on Scientific Computing}, {\bf 24}(1), 312?334.
-\bibitem[Green and Hollifield, 1992]{Green1992}
-Green, R.~C. and Hollifield, B. (1992).
-\newblock {When will mean-variance efficient portfolios be well diversified?}
-\newblock {\em The Journal of Finance}, {\bf 47}(5), 1785--1809.
-\bibitem[Jagannathan and Ma, 2003]{Jagannathan2003}
-Jagannathan, R. and Ma, T. (2003).
-\newblock {Risk reduction in large portfolios: Why imposing the wrong
-  constraints helps}.
-\newblock {\em The Journal of Finance}, {\bf 58}(4),1651--1683.
-\bibitem[Khare et~al., 2015]{Khare2015}
-Khare, K., Oh, S.-Y., and Rajaratnam, B. (2015).
-\newblock {A convex pseudolikelihood framework for high dimensional partial
-  correlation estimation with convergence guarantees}.
-\newblock {\em Journal of the Royal Statistical Society: Series B}, {\bf 77(4)}:803-825.
-\bibitem[Kwon et~al., 2017]{Kwon2016}
-Kwon, Y., Choi, Y.-G., Park, T., Ziegler, A., and Paik, M.~C. (2017).
-\newblock {Generalized estimating equations with stabilized working correlation  structure}.
-\newblock {\em Computational Statistics {\&} Data Analysis}, {\bf 106}:1--11.
+%\bibliography{FSPD_ref.bib}
 
-\bibitem[Lam and Fan, 2009]{Lam2009}
-Lam, C. and Fan, J. (2009).
-\newblock {Sparsistency and rates of convergence in large covariance matrix
-  estimation.}
-\newblock {\em The Annals of Statistics}, {\bf 37}(6B), 4254--4278.
-\bibitem[Lanckriet et~al., 2002]{Lanckriet2002}
-Lanckriet, G., {El Ghaoui}, L., Bhattacharyya, C., and Jordan, M.I. (2002).
-\newblock {A robust minimax approach to classification}.
-\newblock {\em The Journal of Machine Learning Research}, {\bf 3}, 555--582.
-\bibitem[Ledoit and Wolf, 2004]{Ledoit2004}
-Ledoit, O. and Wolf, M. (2004).
-\newblock {A well-conditioned estimator for large-dimensional covariance
-  matrices}.
-\newblock {\em Journal of Multivariate Analysis}, {\bf 88}(2), 365--411.
-\bibitem[Lehoucq and Sorensen, 1996]{Lehoucq1996}
-Lehoucq, R. and Sorensen, D. (1996).
-\newblock {Deflation techniques for an implicitly restarted Arnoldi iteration}.
-\newblock {\em SIAM Journal on Matrix Analysis and Applications},
-  {\bf 17}(4), 789--821.
+\begin{thebibliography}{39}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
 
-\bibitem[Little et~al., 2009]{Little2009}
-Little, M.~A., McSharry, P.~E., Hunter, E.~J., and Ramig, L.~O. (2009). \newblock {Suitability of dysphonia measurements for telemonitoring of Parkinson's disease}. \newblock {\em IEEE Transactions on Biomedical Engineering}, {\bf 56}, 1015--1022.  
+%Type = Article
+\bibitem[{Bickel and Levina(2008{\natexlab{a}})}]{Bickel2008a}
+\bibinfo{author}{P.~J. Bickel}, \bibinfo{author}{E.~Levina},
+\newblock \bibinfo{title}{{Covariance regularization by thresholding}},
+\newblock \bibinfo{journal}{Ann. Stat.} \bibinfo{volume}{36}
+  (\bibinfo{year}{2008}{\natexlab{a}}) \bibinfo{pages}{2577--2604}. \URLprefix
+  \url{http://projecteuclid.org/euclid.aos/1231165180}.
+  \DOIprefix\doi{10.1214/08-AOS600}.
+
+%Type = Article
+\bibitem[{Bickel and Levina(2008{\natexlab{b}})}]{Bickel2008}
+\bibinfo{author}{P.~J. Bickel}, \bibinfo{author}{E.~Levina},
+\newblock \bibinfo{title}{{Regularized estimation of large covariance
+  matrices}},
+\newblock \bibinfo{journal}{Ann. Stat.} \bibinfo{volume}{36}
+  (\bibinfo{year}{2008}{\natexlab{b}}) \bibinfo{pages}{199--227}. \URLprefix
+  \url{http://projecteuclid.org/euclid.aos/1201877299}.
+  \DOIprefix\doi{10.1214/009053607000000758}.
+
+%Type = Article
+\bibitem[{Bien and Tibshirani(2011)}]{Bien2011}
+\bibinfo{author}{J.~Bien}, \bibinfo{author}{R.~J. Tibshirani},
+\newblock \bibinfo{title}{{Sparse estimation of a covariance matrix}},
+\newblock \bibinfo{journal}{Biometrika} \bibinfo{volume}{98}
+  (\bibinfo{year}{2011}) \bibinfo{pages}{807--820}.
+  \DOIprefix\doi{10.1093/biomet/asr054}.
   
-\bibitem[Liu et~al., 2014]{Liu2014}
-Liu, H., Wang, L., and Zhao, T. (2014).
-\newblock {Sparse covariance matrix estimation with eigenvalue constraints}.
-\newblock {\em Journal of Computational and Graphical Statistics},
-  {\bf 23}(2), 439--459.
-\bibitem[Luenberger, 2013]{Luenberger2013}
-Luenberger, D.G. (2013).
-\newblock {\emph{Investment Science} (2nd edition)}.
-\newblock Oxford University Press,  New York.
-\bibitem[Marcenko and Pastur, 1967]{Marcenko1967}
-Marcenko, V. and Pastur, L. (1967).
-\newblock {Distribution of eigenvalues for some sets of random matrices}.
-\newblock {\em Mathematics of the USSR-Sbornik}, {\bf 1}(4), 457--483.
-\bibitem[Markowitz, 1952]{Markowitz1952}
-Markowitz, H. (1952).
-\newblock {Portfolio selection}.
-\newblock {\em The Journal of Finance}, {\bf 7}(1), 77--91.
-\bibitem[Mazumder and Hastie, 2012]{Mazumder2012}
-Mazumder, R. and Hastie, T. (2012).
-\newblock {The graphical lasso: New insights and alternatives}.
-\newblock {\em Electronic Journal of Statistics}, {\bf 6}, 2125--2149.
-\bibitem[Meinshausen and B\"{u}hlmann, 2006]{Meinshausen2006}
-Meinshausen, N. and B\"{u}hlmann, P. (2006).
-\newblock {High-dimensional graphs and variable selection with the Lasso}.
-\newblock {\em The Annals of Statistics}, {\bf 34}(3), 1436--1462.
-\bibitem[Merton, 1980]{Merton1980}
-Merton, R.C. (1980).
-\newblock {On estimating the expected return on the market}.
-\newblock {\em Journal of Financial Economics}, {\bf 8}, 323--361.
-\bibitem[Peng et~al., 2009]{Peng2009}
-Peng, J., Wang, P., Zhou, N., and Zhu, J. (2009).
-\newblock {Partial correlation estimation by joint sparse regression models.}
-\newblock {\em Journal of the American Statistical Association},
-  {\bf 104}(486), 735--746.
-\bibitem[Rothman, 2012]{Rothman2012}
-Rothman, A.~J. (2012).
-\newblock {Positive definite estimators of large covariance matrices}.
-\newblock {\em Biometrika}, {\bf 99}(3), 733--740.
-\bibitem[Rothman et~al., 2009]{Rothman2009}
-Rothman, A., Levina, E., and Zhu, J. (2009).
-\newblock {Generalized thresholding of large covariance matrices}.
-\newblock {\em Journal of the American Statistical Association},
-  {\bf 104}(485), 177--186.
-\bibitem[Sorensen, 1990]{Sorensen1990}
-Sorensen, D. (1990).
-\newblock {Implicit application of polynomial filters in a k-step Arnoldi method}.
-\newblock {\em SIAM Journal on Matrix Analysis and Applications},
-  13(1):357--385.
-\bibitem[Stein, 1956]{Stein1956}
-Stein, C. (1956).
-\newblock {Inadmissibility of the usual estimator for the mean of a multivariate
-normal distribution}.
-\newblock In {\em Proc. Third Berkeley Symp. on Math. Statist. and Prob.}, {\bf 1}, 197--206.
-\bibitem[Sun et~al., 2010]{Sun2010}
-Sun, Y., Todorovic, S., and Goodison, S. (2010).
-\newblock {Local learning based feature selection for high dimensional data
-  analysis.}
-\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
- {\bf 32}(9), 610--626.
-\bibitem[Tsanas et~al., 2014]{Tsanas2014}
-Tsanas, A., Little, M., Fox, C., and Ramig, L.~O. (2014).
-\newblock {Objective automatic assessment of rehabilitative speech treatment in
-  Parkinson's disease}.
-\newblock {\em IEEE Transactions on Neural Systems and Rehabilitation
-  Engineering}, 22(1):181--190.
-\bibitem[Witten et~al., 2011]{Witten2011}
-Witten, D., Friedman, J., and Simon, N. (2011).
-\newblock {New insights and faster computations for the graphical lasso}.
-\newblock {\em Journal of Computational and Graphical Statistics},
-  {\bf 20}(4), 892--900.
-\bibitem[Won et~al., 2013]{Won2013}
-Won, J-H., Lim, J., Kim, S-J., and Rajaratnam, B. (2013).
-\newblock {Condition number regularized covariance estimation}.
-\newblock {\em Journal of the Royal Statistical Society. Series B}, {\bf 75}(3),
-427--450.
-\bibitem[Xue et~al., 2012]{Xue2012}
-Xue, L., Ma, S., and Zou, H. (2012).
-\newblock {Positive-definite $\ell_1$-penalized estimation of large covariance
-  matrices}.
-\newblock {\em Journal of the American Statistical Association},
- {\bf 107}(500),1480--1491.
+%Type = Article
+\bibitem[{Boyd et~al.(2010)Boyd, Parikh, Chu, Peleato, and Eckstein}]{Boyd2010}
+\bibinfo{author}{S.~Boyd}, \bibinfo{author}{N.~Parikh},
+  \bibinfo{author}{E.~Chu}, \bibinfo{author}{B.~Peleato},
+  \bibinfo{author}{J.~Eckstein},
+\newblock \bibinfo{title}{{Distributed optimization and statistical learning
+  via the alternating direction method of multipliers}},
+\newblock \bibinfo{journal}{Found. Trends Mach. Learn.} \bibinfo{volume}{3}
+  (\bibinfo{year}{2010}) \bibinfo{pages}{1--122}. \URLprefix
+  \url{https://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=8186925}.
+  \DOIprefix\doi{10.1561/2200000016}.
+  
+%Type = Article
+\bibitem[{Cai and Liu(2011)}]{Cai2011b}
+\bibinfo{author}{T.~Cai}, \bibinfo{author}{W.~Liu},
+\newblock \bibinfo{title}{{Adaptive thresholding for sparse covariance matrix
+  estimation}},
+\newblock \bibinfo{journal}{J. Amer. Stat. Assoc.} \bibinfo{volume}{106}
+  (\bibinfo{year}{2011}) \bibinfo{pages}{672--684}. \URLprefix
+  \url{http://www.tandfonline.com/doi/abs/10.1198/jasa.2011.tm10560}.
+  \DOIprefix\doi{10.1198/jasa.2011.tm10560}.
+  
+%Type = Article
+\bibitem[{Cai et~al.(2011)Cai, Liu, and Luo}]{Cai2011}
+\bibinfo{author}{T.~Cai}, \bibinfo{author}{W.~Liu}, \bibinfo{author}{X.~Luo},
+\newblock \bibinfo{title}{{A constrained l1 minimization approach to sparse
+  precision matrix estimation}},
+\newblock \bibinfo{journal}{J. Amer. Stat. Assoc.} \bibinfo{volume}{106}
+  (\bibinfo{year}{2011}) \bibinfo{pages}{594--607}. \URLprefix
+  \url{http://www.tandfonline.com/doi/abs/10.1198/jasa.2011.tm10155}.
+  \DOIprefix\doi{10.1198/jasa.2011.tm10155}.
+  \href{http://arxiv.org/abs/1102.2233}{{\tt arXiv:1102.2233}}.
+
+%Type = Article
+\bibitem[{Cai and Low(2015)}]{Cai2011a}
+\bibinfo{author}{T.~T. Cai}, \bibinfo{author}{M.~Low},
+\newblock \bibinfo{title}{{A framework for estimation of convex functions}},
+\newblock \bibinfo{journal}{Stat. Sinica} \bibinfo{volume}{25}
+  (\bibinfo{year}{2015}) \bibinfo{pages}{423--456}. \URLprefix
+  \url{http://www3.stat.sinica.edu.tw/statistica/J25N2/J25N21/J25N21.html}.
+  \DOIprefix\doi{10.5705/ss.2013.279}.
+
+%Type = Article
+\bibitem[{Cai et~al.(2016)Cai, Ren, and Zhou}]{Cai2016a}
+\bibinfo{author}{T.~T. Cai}, \bibinfo{author}{Z.~Ren}, \bibinfo{author}{H.~H.
+  Zhou},
+\newblock \bibinfo{title}{{Estimating structured high-dimensional covariance
+  and precision matrices: Optimal rates and adaptive estimation}},
+\newblock \bibinfo{journal}{Electron. J. Stat.} \bibinfo{volume}{10}
+  (\bibinfo{year}{2016}) \bibinfo{pages}{1--59}. \URLprefix
+  \url{http://projecteuclid.org/euclid.ejs/1455715952}.
+  \DOIprefix\doi{10.1214/15-EJS1081}.
+  
+%Type = Article
+\bibitem[{Cai and Yuan(2012)}]{Cai2012c}
+\bibinfo{author}{T.~T. Cai}, \bibinfo{author}{M.~Yuan},
+\newblock \bibinfo{title}{{Adaptive covariance matrix estimation through block
+  thresholding}},
+\newblock \bibinfo{journal}{Ann. Stat.} \bibinfo{volume}{40}
+  (\bibinfo{year}{2012}) \bibinfo{pages}{2014--2042}. \URLprefix
+  \url{http://projecteuclid.org/euclid.aos/1351602535}.
+  \DOIprefix\doi{10.1214/12-AOS999}.
+
+%Type = Article
+\bibitem[{Cai et~al.(2010)Cai, Zhang, and Zhou}]{Cai2010}
+\bibinfo{author}{T.~T. Cai}, \bibinfo{author}{C.-H. Zhang},
+  \bibinfo{author}{H.~H. Zhou},
+\newblock \bibinfo{title}{{Optimal rates of convergence for covariance matrix
+  estimation}},
+\newblock \bibinfo{journal}{Ann. Stat.} \bibinfo{volume}{38}
+  (\bibinfo{year}{2010}) \bibinfo{pages}{2118--2144}. \URLprefix
+  \url{http://projecteuclid.org/euclid.aos/1278861244}.
+  \DOIprefix\doi{10.1214/09-AOS752}.
+
+%Type = Article
+\bibitem[{Cai and Zhou(2012)}]{Cai2012f}
+\bibinfo{author}{T.~T. Cai}, \bibinfo{author}{H.~H. Zhou},
+\newblock \bibinfo{title}{{Optimal rates of convergence for sparse covariance
+  matrix estimation}},
+\newblock \bibinfo{journal}{Ann. Stat.} \bibinfo{volume}{40}
+  (\bibinfo{year}{2012}) \bibinfo{pages}{2389--2420}. \URLprefix
+  \url{http://projecteuclid.org/euclid.aos/1359987525}.
+  \DOIprefix\doi{10.1214/12-AOS998}.
+
+%Type = Article
+\bibitem[{Chan(1999)}]{Chan1999}
+\bibinfo{author}{L.~Chan},
+\newblock \bibinfo{title}{{On portfolio optimization: forecasting covariances
+  and choosing the risk model}},
+\newblock \bibinfo{journal}{Rev. Financial Stud.} \bibinfo{volume}{12}
+  (\bibinfo{year}{1999}) \bibinfo{pages}{937--974}.
+  \DOIprefix\doi{10.1093/rfs/12.5.937}.
+  
+%Type = Book
+\bibitem[{Demmel(1997)}]{Demmel1997}
+\bibinfo{author}{J.~W. Demmel}, \bibinfo{title}{{Applied Numerical Linear
+  Algebra}}, \bibinfo{publisher}{SIAM}, \bibinfo{address}{Philadelphia, PA},
+  \bibinfo{year}{1997}.
+
+%Type = Article
+\bibitem[{Fan et~al.(2013)Fan, Liao, and Mincheva}]{Fan2013}
+\bibinfo{author}{J.~Fan}, \bibinfo{author}{Y.~Liao},
+  \bibinfo{author}{M.~Mincheva},
+\newblock \bibinfo{title}{{Large covariance estimation by thresholding
+  principal orthogonal complements}},
+\newblock \bibinfo{journal}{J. R. Stat. Soc. Series B Stat. Methodol.}
+  \bibinfo{volume}{75} (\bibinfo{year}{2013}) \bibinfo{pages}{603--680}.
+  \URLprefix \url{http://doi.wiley.com/10.1111/rssb.12016}.
+  \DOIprefix\doi{10.1111/rssb.12016}.
+  
+%Type = Article
+\bibitem[{Friedman et~al.(2008)Friedman, Hastie, and Tibshirani}]{Friedman2008}
+\bibinfo{author}{J.~Friedman}, \bibinfo{author}{T.~Hastie},
+  \bibinfo{author}{R.~Tibshirani},
+\newblock \bibinfo{title}{{Sparse inverse covariance estimation with the
+  graphical lasso}},
+\newblock \bibinfo{journal}{Biostatistics} \bibinfo{volume}{9}
+  (\bibinfo{year}{2008}) \bibinfo{pages}{432--441}. \URLprefix
+  \url{https://academic.oup.com/biostatistics/article/9/3/432/224260}.
+  \DOIprefix\doi{10.1093/biostatistics/kxm045}.
+
+%Type = Techreport
+\bibitem[{Friedman et~al.(2010)Friedman, Hastie, and Tibshirani}]{Friedman2010}
+\bibinfo{author}{J.~Friedman}, \bibinfo{author}{T.~Hastie},
+  \bibinfo{author}{R.~Tibshirani}, \bibinfo{title}{{Applications of the lasso
+  and grouped lasso to the estimation of sparse graphical models}},
+  \bibinfo{type}{Technical Report}, Stanford University,
+  \bibinfo{address}{Stanford, CA}, \bibinfo{year}{2010}. \URLprefix
+  \url{statweb.stanford.edu/~tibs/ftp/ggraph.pdf}.
+
+%Type = Article
+\bibitem[{Golub and Ye(2002)}]{Golub2002}
+\bibinfo{author}{G.~H. Golub}, \bibinfo{author}{Q.~Ye},
+\newblock \bibinfo{title}{{An inverse free preconditioned Krylov subspace
+  method for symmetric generalized eigenvalue problems}},
+\newblock \bibinfo{journal}{SIAM J. Sci. Comput.}
+  \bibinfo{volume}{24} (\bibinfo{year}{2002}) \bibinfo{pages}{312--334}.
+  \URLprefix \url{https://doi.org/10.1137/S1064827500382579}.
+  \DOIprefix\doi{10.1137/S1064827500382579}.
+
+%Type = Book
+\bibitem[{Golub and {Van Loan}(2012)}]{Golub2012}
+\bibinfo{author}{G.~H. Golub}, \bibinfo{author}{C.~F. {Van Loan}},
+  \bibinfo{title}{{Matrix Computations}}, \bibinfo{edition}{fourth} ed.,
+  \bibinfo{publisher}{Johns Hopkins University Press},
+  \bibinfo{address}{Baltimore, MD}, \bibinfo{year}{2012}.
+  
+%Type = Article
+\bibitem[{Jagannathan and Ma(2003)}]{Jagannathan2003}
+\bibinfo{author}{R.~Jagannathan}, \bibinfo{author}{T.~Ma},
+\newblock \bibinfo{title}{{Risk reduction in large portfolios: Why imposing the
+  wrong constraints helps}},
+\newblock \bibinfo{journal}{J. Finance} \bibinfo{volume}{58}
+  (\bibinfo{year}{2003}) \bibinfo{pages}{1651--1683}. \URLprefix
+  \url{https://onlinelibrary.wiley.com/doi/abs/10.1111/1540-6261.00580}.
+  \DOIprefix\doi{10.1111/1540-6261.00580}.
+  
+%Type = Article
+\bibitem[{Khare et~al.(2015)Khare, Oh, and Rajaratnam}]{Khare2015}
+\bibinfo{author}{K.~Khare}, \bibinfo{author}{S.-Y. Oh},
+  \bibinfo{author}{B.~Rajaratnam},
+\newblock \bibinfo{title}{{A convex pseudolikelihood framework for high
+  dimensional partial correlation estimation with convergence guarantees}},
+\newblock \bibinfo{journal}{J. R. Stat. Soc. Series B Stat. Methodol.} \bibinfo{volume}{77} (\bibinfo{year}{2015})
+  \bibinfo{pages}{803--825}. \URLprefix
+  \url{http://doi.wiley.com/10.1111/rssb.12088}.
+  \DOIprefix\doi{10.1111/rssb.12088}.
+  \href{http://arxiv.org/abs/1307.5381}{{\tt arXiv:1307.5381}}.
+
+%Type = Article
+\bibitem[{Kwon et~al.(2017)Kwon, Choi, Park, Ziegler, and Paik}]{Kwon2016}
+\bibinfo{author}{Y.~Kwon}, \bibinfo{author}{Y.-G. Choi},
+  \bibinfo{author}{T.~Park}, \bibinfo{author}{A.~Ziegler},
+  \bibinfo{author}{M.~C. Paik},
+\newblock \bibinfo{title}{{Generalized estimating equations with stabilized
+  working correlation structure}},
+\newblock \bibinfo{journal}{Comput. Stat. Data Anal.}
+  \bibinfo{volume}{106} (\bibinfo{year}{2017}) \bibinfo{pages}{1--11}.
+  \URLprefix \url{http://dx.doi.org/10.1016/j.csda.2016.08.016}.
+  \DOIprefix\doi{10.1016/j.csda.2016.08.016}.
+%
+%Type = Article
+\bibitem[{Lam and Fan(2009)}]{Lam2009}
+\bibinfo{author}{C.~Lam}, \bibinfo{author}{J.~Fan},
+\newblock \bibinfo{title}{{Sparsistency and rates of convergence in large
+  covariance matrix estimation}},
+\newblock \bibinfo{journal}{Ann. Stat.} \bibinfo{volume}{37}
+  (\bibinfo{year}{2009}) \bibinfo{pages}{4254--4278}. \URLprefix
+  \url{https://projecteuclid.org/euclid.aos/1256303543}.
+  \DOIprefix\doi{10.1214/09-AOS720}.
+
+%Type = Article
+\bibitem[{Lanckriet et~al.(2002)Lanckriet, {El Ghaoui}, Bhattacharyya, and
+  Jordan}]{Lanckriet2002}
+\bibinfo{author}{G.~R. Lanckriet}, \bibinfo{author}{L.~{El Ghaoui}},
+  \bibinfo{author}{C.~Bhattacharyya}, \bibinfo{author}{M.~I. Jordan},
+\newblock \bibinfo{title}{{A robust minimax approach to classification}},
+\newblock \bibinfo{journal}{J. Mach. Learn Res.}
+  \bibinfo{volume}{3} (\bibinfo{year}{2002}) \bibinfo{pages}{555--582}.
+  \URLprefix
+  \url{http://www.jmlr.org/papers/volume3/lanckriet02a/lanckriet02a.pdf}.
+  \DOIprefix\doi{10.1162/153244303321897726}.
+
+%Type = Article
+\bibitem[{Ledoit and Wolf(2004)}]{Ledoit2004}
+\bibinfo{author}{O.~Ledoit}, \bibinfo{author}{M.~Wolf},
+\newblock \bibinfo{title}{{A well-conditioned estimator for large-dimensional
+  covariance matrices}},
+\newblock \bibinfo{journal}{J. Multivar. Anal.}
+  \bibinfo{volume}{88} (\bibinfo{year}{2004}) \bibinfo{pages}{365--411}.
+  \URLprefix
+  \url{http://www.sciencedirect.com/science/article/pii/S0047259X03000964}.
+  \DOIprefix\doi{10.1016/S0047-259X(03)00096-4}.
+  
+%Type = Article
+\bibitem[{Lehoucq and Sorensen(1996)}]{Lehoucq1996}
+\bibinfo{author}{R.~B. Lehoucq}, \bibinfo{author}{D.~C. Sorensen},
+\newblock \bibinfo{title}{{Deflation techniques for an implicitly restarted
+  arnoldi iteration}},
+\newblock \bibinfo{journal}{SIAM J. Matrix Anal. Appl.} \bibinfo{volume}{17}
+  (\bibinfo{year}{1996}) \bibinfo{pages}{789--821}. \URLprefix
+  \url{https://doi.org/10.1137/S0895479895281484}.
+  \DOIprefix\doi{10.1137/S0895479895281484}.
+
+%Type = Article
+\bibitem[{Little et~al.(2009)Little, McSharry, Hunter, Spielman, and
+  Ramig}]{Little2009}
+\bibinfo{author}{M.~Little}, \bibinfo{author}{P.~McSharry},
+  \bibinfo{author}{E.~Hunter}, \bibinfo{author}{J.~Spielman},
+  \bibinfo{author}{L.~Ramig},
+\newblock \bibinfo{title}{{Suitability of dysphonia measurements for
+  telemonitoring of parkinson's disease}},
+\newblock \bibinfo{journal}{IEEE Trans. Biomed. Eng.} \bibinfo{volume}{56}
+  (\bibinfo{year}{2009}) \bibinfo{pages}{1015--1022}. \URLprefix
+  \url{http://ieeexplore.ieee.org/document/4636708/}.
+  \DOIprefix\doi{10.1109/TBME.2008.2005954}.
+  
+%Type = Article
+\bibitem[{Liu et~al.(2014)Liu, Wang, and Zhao}]{Liu2014}
+\bibinfo{author}{H.~Liu}, \bibinfo{author}{L.~Wang}, \bibinfo{author}{T.~Zhao},
+\newblock \bibinfo{title}{{Sparse covariance matrix estimation with eigenvalue
+  constraints}},
+\newblock \bibinfo{journal}{J. Comput. Graph. Stat.} \bibinfo{volume}{23}
+  (\bibinfo{year}{2014}) \bibinfo{pages}{439--459}. \URLprefix
+  \url{http://www.tandfonline.com/doi/abs/10.1080/10618600.2013.782818}.
+  \DOIprefix\doi{10.1080/10618600.2013.782818}.
+
+%Type = Article
+\bibitem[{Marcenko and Pastur(1967)}]{Marcenko1967}
+\bibinfo{author}{V.~A. Marcenko}, \bibinfo{author}{L.~A. Pastur},
+\newblock \bibinfo{title}{{Distribution of eigenvalues for some sets of random
+  matrices}},
+\newblock \bibinfo{journal}{Math. USSR-Sbornik} \bibinfo{volume}{1}
+  (\bibinfo{year}{1967}) \bibinfo{pages}{457--483}.
+  \DOIprefix\doi{10.1070/SM1967v001n04ABEH001994}.
+
+%Type = Article
+\bibitem[{Mazumder and Hastie(2012)}]{Mazumder2012}
+\bibinfo{author}{R.~Mazumder}, \bibinfo{author}{T.~Hastie},
+\newblock \bibinfo{title}{{The graphical lasso: New insights and
+  alternatives}},
+\newblock \bibinfo{journal}{Electron. J. Stat.} \bibinfo{volume}{6}
+  (\bibinfo{year}{2012}) \bibinfo{pages}{2125--2149}. \URLprefix
+  \url{https://projecteuclid.org/euclid.ejs/1352470831}.
+  \DOIprefix\doi{10.1214/12-EJS740}. \href{http://arxiv.org/abs/1111.5479}{{\tt
+  arXiv:1111.5479}}.
+
+%
+%Type = Article
+\bibitem[{Meinshausen and B{\"{u}}hlmann(2006)}]{Meinshausen2006}
+\bibinfo{author}{N.~Meinshausen}, \bibinfo{author}{P.~B{\"{u}}hlmann},
+\newblock \bibinfo{title}{{High-dimensional graphs and variable selection with
+  the Lasso}},
+\newblock \bibinfo{journal}{Ann. Stat.} \bibinfo{volume}{34}
+  (\bibinfo{year}{2006}) \bibinfo{pages}{1436--1462}. \URLprefix
+  \url{http://projecteuclid.org/euclid.aos/1152540754}.
+  \DOIprefix\doi{10.1214/009053606000000281}.
+  \href{http://arxiv.org/abs/0608017}{{\tt arXiv:0608017}}.
+  
+%Type = Article
+\bibitem[{Peng et~al.(2009)Peng, Wang, Zhou, and Zhu}]{Peng2009}
+\bibinfo{author}{J.~Peng}, \bibinfo{author}{P.~Wang},
+  \bibinfo{author}{N.~Zhou}, \bibinfo{author}{J.~Zhu},
+\newblock \bibinfo{title}{{Partial correlation estimation by joint sparse
+  regression models}},
+\newblock \bibinfo{journal}{J. Amer. Stat. Assoc.} \bibinfo{volume}{104}
+  (\bibinfo{year}{2009}) \bibinfo{pages}{735--746}.
+  \DOIprefix\doi{10.1198/jasa.2009.0126}.
+  
+%Type = Article
+\bibitem[{Rothman(2012)}]{Rothman2012}
+\bibinfo{author}{A.~J. Rothman},
+\newblock \bibinfo{title}{{Positive definite estimators of large covariance
+  matrices}},
+\newblock \bibinfo{journal}{Biometrika} \bibinfo{volume}{99}
+  (\bibinfo{year}{2012}) \bibinfo{pages}{733--740}. \URLprefix
+  \url{https://academic.oup.com/biomet/article-abstract/99/3/733/359725}.
+  \DOIprefix\doi{10.1093/biomet/ass025}.
+ 
+%Type = Article
+\bibitem[{Rothman et~al.(2009)Rothman, Levina, and Zhu}]{Rothman2009}
+\bibinfo{author}{A.~J. Rothman}, \bibinfo{author}{E.~Levina},
+  \bibinfo{author}{J.~Zhu},
+\newblock \bibinfo{title}{{Generalized thresholding of large covariance
+  matrices}},
+\newblock \bibinfo{journal}{J. Amer. Stat. Assoc.} \bibinfo{volume}{104}
+  (\bibinfo{year}{2009}) \bibinfo{pages}{177--186}. \URLprefix
+  \url{http://www.tandfonline.com/doi/abs/10.1198/jasa.2009.0101}.
+  \DOIprefix\doi{10.1198/jasa.2009.0101}.
+
+%Type = Article
+\bibitem[{Sorensen(1990)}]{Sorensen1990}
+\bibinfo{author}{D.~C. Sorensen},
+\newblock \bibinfo{title}{{Implicit application of polynomial filters in a
+  k-step Arnoldi method}},
+\newblock \bibinfo{journal}{SIAM J. Matrix Anal. Appl.} \bibinfo{volume}{13}
+  (\bibinfo{year}{1990}) \bibinfo{pages}{357--385}. \URLprefix
+  \url{https://epubs.siam.org/doi/10.1137/0613025}.
+  \DOIprefix\doi{10.1137/0613025}.
+  
+%Type = Article
+\bibitem[{Sun et~al.(2010)Sun, Todorovic, and Goodison}]{Sun2010}
+\bibinfo{author}{Y.~Sun}, \bibinfo{author}{S.~Todorovic},
+  \bibinfo{author}{S.~Goodison},
+\newblock \bibinfo{title}{{Local-learning-based feature selection for
+  high-dimensional data analysis}},
+\newblock \bibinfo{journal}{IEEE Trans. Pattern. Anal. Mach. Intell.}
+  \bibinfo{volume}{32} (\bibinfo{year}{2010}) \bibinfo{pages}{1610--1626}.
+  \URLprefix \url{https://dx.doi.org/10.1109/TPAMI.2009.190}.
+  \DOIprefix\doi{10.1109/TPAMI.2009.190}.
+  
+%Type = Article
+\bibitem[{Tsanas et~al.(2014)Tsanas, Little, Fox, and Ramig}]{Tsanas2014}
+\bibinfo{author}{A.~Tsanas}, \bibinfo{author}{M.~a. Little},
+  \bibinfo{author}{C.~Fox}, \bibinfo{author}{L.~O. Ramig},
+\newblock \bibinfo{title}{{Objective automatic assessment of rehabilitative
+  speech treatment in Parkinson's disease}},
+\newblock \bibinfo{journal}{IEEE Trans. Neural. Syst. Rehabil. Eng.}
+  \bibinfo{volume}{22} (\bibinfo{year}{2014}) \bibinfo{pages}{181--190}.
+  \URLprefix
+  \url{http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6678640}.
+  \DOIprefix\doi{10.1109/TNSRE.2013.2293575}.
+
+%Type = Article
+\bibitem[{Witten et~al.(2011)Witten, Friedman, and Simon}]{Witten2011}
+\bibinfo{author}{D.~M. Witten}, \bibinfo{author}{J.~H. Friedman},
+  \bibinfo{author}{N.~Simon},
+\newblock \bibinfo{title}{{New insights and faster computations for the
+  graphical lasso}},
+\newblock \bibinfo{journal}{J. Comput. Graph. Stat.} \bibinfo{volume}{20}
+  (\bibinfo{year}{2011}) \bibinfo{pages}{892--900}. \URLprefix
+  \url{http://www.tandfonline.com/doi/abs/10.1198/jcgs.2011.11051a}.
+  \DOIprefix\doi{10.1198/jcgs.2011.11051a}.
+
+%Type = Article
+\bibitem[{Won et~al.(2013)Won, Lim, Kim, and Rajaratnam}]{Won2013}
+\bibinfo{author}{J.-H. Won}, \bibinfo{author}{J.~Lim}, \bibinfo{author}{S.-J.
+  Kim}, \bibinfo{author}{B.~Rajaratnam},
+\newblock \bibinfo{title}{{Condition number regularized covariance
+  estimation}},
+\newblock \bibinfo{journal}{J. R. Stat. Soc. Series B Stat. Methodol.}
+  \bibinfo{volume}{75} (\bibinfo{year}{2013}) \bibinfo{pages}{427--450}.
+  \URLprefix
+  \url{http://onlinelibrary.wiley.com/doi/10.1111/j.1467-9868.2012.01049.x/abstract}.
+  \DOIprefix\doi{10.1111/j.1467-9868.2012.01049.x}.
+
+%Type = Article
+\bibitem[{Xue et~al.(2012)Xue, Ma, and Zou}]{Xue2012}
+\bibinfo{author}{L.~Xue}, \bibinfo{author}{S.~Ma}, \bibinfo{author}{H.~Zou},
+\newblock \bibinfo{title}{{Positive-definite l1-penalized estimation of large
+  covariance matrices}},
+\newblock \bibinfo{journal}{J. Amer. Stat. Assoc.} \bibinfo{volume}{107}
+  (\bibinfo{year}{2012}) \bibinfo{pages}{1480--1491}. \URLprefix
+  \url{http://www.tandfonline.com/doi/abs/10.1080/01621459.2012.725386}.
+  \DOIprefix\doi{10.1080/01621459.2012.725386}.
+
 \end{thebibliography}
-
-
 
 
 

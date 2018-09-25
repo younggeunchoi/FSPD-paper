@@ -1,0 +1,47 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: FSPD_rev2_JMVAformatted.aux
+The style file: model1-num-names.bst
+Database file #1: FSPD_ref.bib.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 39 entries,
+            2910 wiz_defined-function locations,
+            966 strings with 13741 characters,
+and the built_in function-call counts, 24264 in all, are:
+= -- 1927
+> -- 937
+< -- 20
++ -- 349
+- -- 309
+* -- 3018
+:= -- 3566
+add.period$ -- 40
+call.type$ -- 39
+change.case$ -- 297
+chr.to.int$ -- 38
+cite$ -- 39
+duplicate$ -- 1583
+empty$ -- 1612
+format.name$ -- 450
+if$ -- 4375
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 377
+newline$ -- 204
+num.names$ -- 156
+pop$ -- 365
+preamble$ -- 1
+purify$ -- 298
+quote$ -- 0
+skip$ -- 409
+stack$ -- 0
+substring$ -- 1410
+swap$ -- 1389
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 345
+warning$ -- 0
+while$ -- 189
+width$ -- 0
+write$ -- 519

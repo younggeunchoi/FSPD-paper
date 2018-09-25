@@ -1,0 +1,302 @@
+\begin{thebibliography}{39}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Marcenko and Pastur(1967)}]{Marcenko1967}
+\bibinfo{author}{V.~A. Marcenko}, \bibinfo{author}{L.~A. Pastur},
+\newblock \bibinfo{title}{{Distribution of eigenvalues for some sets of random
+  matrices}},
+\newblock \bibinfo{journal}{Math. USSR-Sbornik} \bibinfo{volume}{1}
+  (\bibinfo{year}{1967}) \bibinfo{pages}{457--483}.
+%Type = Article
+\bibitem[{Bickel and Levina(2008{\natexlab{a}})}]{Bickel2008a}
+\bibinfo{author}{P.~J. Bickel}, \bibinfo{author}{E.~Levina},
+\newblock \bibinfo{title}{{Covariance regularization by thresholding}},
+\newblock \bibinfo{journal}{Ann. Stat.} \bibinfo{volume}{36}
+  (\bibinfo{year}{2008}{\natexlab{a}}) \bibinfo{pages}{2577--2604}.
+%Type = Article
+\bibitem[{Bickel and Levina(2008{\natexlab{b}})}]{Bickel2008}
+\bibinfo{author}{P.~J. Bickel}, \bibinfo{author}{E.~Levina},
+\newblock \bibinfo{title}{{Regularized estimation of large covariance
+  matrices}},
+\newblock \bibinfo{journal}{Ann. Stat.} \bibinfo{volume}{36}
+  (\bibinfo{year}{2008}{\natexlab{b}}) \bibinfo{pages}{199--227}.
+%Type = Article
+\bibitem[{Cai et~al.(2010)Cai, Zhang, and Zhou}]{Cai2010}
+\bibinfo{author}{T.~T. Cai}, \bibinfo{author}{C.-H. Zhang},
+  \bibinfo{author}{H.~H. Zhou},
+\newblock \bibinfo{title}{{Optimal rates of convergence for covariance matrix
+  estimation}},
+\newblock \bibinfo{journal}{Ann. Stat.} \bibinfo{volume}{38}
+  (\bibinfo{year}{2010}) \bibinfo{pages}{2118--2144}.
+%Type = Article
+\bibitem[{Cai and Low(2015)}]{Cai2011a}
+\bibinfo{author}{T.~T. Cai}, \bibinfo{author}{M.~Low},
+\newblock \bibinfo{title}{{A framework for estimation of convex functions}},
+\newblock \bibinfo{journal}{Stat. Sinica} \bibinfo{volume}{25}
+  (\bibinfo{year}{2015}) \bibinfo{pages}{423--456}.
+%Type = Article
+\bibitem[{Cai and Yuan(2012)}]{Cai2012c}
+\bibinfo{author}{T.~T. Cai}, \bibinfo{author}{M.~Yuan},
+\newblock \bibinfo{title}{{Adaptive covariance matrix estimation through block
+  thresholding}},
+\newblock \bibinfo{journal}{Ann. Stat.} \bibinfo{volume}{40}
+  (\bibinfo{year}{2012}) \bibinfo{pages}{2014--2042}.
+%Type = Article
+\bibitem[{Cai and Zhou(2012)}]{Cai2012f}
+\bibinfo{author}{T.~T. Cai}, \bibinfo{author}{H.~H. Zhou},
+\newblock \bibinfo{title}{{Optimal rates of convergence for sparse covariance
+  matrix estimation}},
+\newblock \bibinfo{journal}{Ann. Stat.} \bibinfo{volume}{40}
+  (\bibinfo{year}{2012}) \bibinfo{pages}{2389--2420}.
+%Type = Article
+\bibitem[{Rothman et~al.(2009)Rothman, Levina, and Zhu}]{Rothman2009}
+\bibinfo{author}{A.~J. Rothman}, \bibinfo{author}{E.~Levina},
+  \bibinfo{author}{J.~Zhu},
+\newblock \bibinfo{title}{{Generalized thresholding of large covariance
+  matrices}},
+\newblock \bibinfo{journal}{J. Amer. Stat. Assoc.} \bibinfo{volume}{104}
+  (\bibinfo{year}{2009}) \bibinfo{pages}{177--186}.
+%Type = Article
+\bibitem[{Bien and Tibshirani(2011)}]{Bien2011}
+\bibinfo{author}{J.~Bien}, \bibinfo{author}{R.~J. Tibshirani},
+\newblock \bibinfo{title}{{Sparse estimation of a covariance matrix}},
+\newblock \bibinfo{journal}{Biometrika} \bibinfo{volume}{98}
+  (\bibinfo{year}{2011}) \bibinfo{pages}{807--820}.
+%Type = Article
+\bibitem[{Lam and Fan(2009)}]{Lam2009}
+\bibinfo{author}{C.~Lam}, \bibinfo{author}{J.~Fan},
+\newblock \bibinfo{title}{{Sparsistency and rates of convergence in large
+  covariance matrix estimation}},
+\newblock \bibinfo{journal}{Ann. Stat.} \bibinfo{volume}{37}
+  (\bibinfo{year}{2009}) \bibinfo{pages}{4254--4278}.
+%Type = Article
+\bibitem[{Liu et~al.(2014)Liu, Wang, and Zhao}]{Liu2014}
+\bibinfo{author}{H.~Liu}, \bibinfo{author}{L.~Wang}, \bibinfo{author}{T.~Zhao},
+\newblock \bibinfo{title}{{Sparse covariance matrix estimation with eigenvalue
+  constraints}},
+\newblock \bibinfo{journal}{J. Comput. Graph. Stat.} \bibinfo{volume}{23}
+  (\bibinfo{year}{2014}) \bibinfo{pages}{439--459}.
+%Type = Article
+\bibitem[{Rothman(2012)}]{Rothman2012}
+\bibinfo{author}{A.~J. Rothman},
+\newblock \bibinfo{title}{{Positive definite estimators of large covariance
+  matrices}},
+\newblock \bibinfo{journal}{Biometrika} \bibinfo{volume}{99}
+  (\bibinfo{year}{2012}) \bibinfo{pages}{733--740}.
+%Type = Article
+\bibitem[{Xue et~al.(2012)Xue, Ma, and Zou}]{Xue2012}
+\bibinfo{author}{L.~Xue}, \bibinfo{author}{S.~Ma}, \bibinfo{author}{H.~Zou},
+\newblock \bibinfo{title}{{Positive-definite l1-penalized estimation of large
+  covariance matrices}},
+\newblock \bibinfo{journal}{J. Amer. Stat. Assoc.} \bibinfo{volume}{107}
+  (\bibinfo{year}{2012}) \bibinfo{pages}{1480--1491}.
+%Type = Article
+\bibitem[{Lanckriet et~al.(2002)Lanckriet, {El Ghaoui}, Bhattacharyya, and
+  Jordan}]{Lanckriet2002}
+\bibinfo{author}{G.~R. Lanckriet}, \bibinfo{author}{L.~{El Ghaoui}},
+  \bibinfo{author}{C.~Bhattacharyya}, \bibinfo{author}{M.~I. Jordan},
+\newblock \bibinfo{title}{{A robust minimax approach to classification}},
+\newblock \bibinfo{journal}{J. Mach. Learn Res.} \bibinfo{volume}{3}
+  (\bibinfo{year}{2002}) \bibinfo{pages}{555--582}.
+%Type = Article
+\bibitem[{Jagannathan and Ma(2003)}]{Jagannathan2003}
+\bibinfo{author}{R.~Jagannathan}, \bibinfo{author}{T.~Ma},
+\newblock \bibinfo{title}{{Risk reduction in large portfolios: Why imposing the
+  wrong constraints helps}},
+\newblock \bibinfo{journal}{J. Finance} \bibinfo{volume}{58}
+  (\bibinfo{year}{2003}) \bibinfo{pages}{1651--1683}.
+%Type = Article
+\bibitem[{Cai and Liu(2011)}]{Cai2011b}
+\bibinfo{author}{T.~Cai}, \bibinfo{author}{W.~Liu},
+\newblock \bibinfo{title}{{Adaptive thresholding for sparse covariance matrix
+  estimation}},
+\newblock \bibinfo{journal}{J. Amer. Stat. Assoc.} \bibinfo{volume}{106}
+  (\bibinfo{year}{2011}) \bibinfo{pages}{672--684}.
+%Type = Article
+\bibitem[{Boyd et~al.(2010)Boyd, Parikh, Chu, Peleato, and Eckstein}]{Boyd2010}
+\bibinfo{author}{S.~Boyd}, \bibinfo{author}{N.~Parikh},
+  \bibinfo{author}{E.~Chu}, \bibinfo{author}{B.~Peleato},
+  \bibinfo{author}{J.~Eckstein},
+\newblock \bibinfo{title}{{Distributed optimization and statistical learning
+  via the alternating direction method of multipliers}},
+\newblock \bibinfo{journal}{Found. Trends Mach. Learn.} \bibinfo{volume}{3}
+  (\bibinfo{year}{2010}) \bibinfo{pages}{1--122}.
+%Type = Article
+\bibitem[{Cai et~al.(2016)Cai, Ren, and Zhou}]{Cai2016a}
+\bibinfo{author}{T.~T. Cai}, \bibinfo{author}{Z.~Ren}, \bibinfo{author}{H.~H.
+  Zhou},
+\newblock \bibinfo{title}{{Estimating structured high-dimensional covariance
+  and precision matrices: Optimal rates and adaptive estimation}},
+\newblock \bibinfo{journal}{Electron. J. Stat.} \bibinfo{volume}{10}
+  (\bibinfo{year}{2016}) \bibinfo{pages}{1--59}.
+%Type = Book
+\bibitem[{Demmel(1997)}]{Demmel1997}
+\bibinfo{author}{J.~W. Demmel}, \bibinfo{title}{{Applied Numerical Linear
+  Algebra}}, \bibinfo{publisher}{SIAM}, \bibinfo{address}{Philadelphia, PA},
+  \bibinfo{year}{1997}.
+%Type = Book
+\bibitem[{Golub and {Van Loan}(2012)}]{Golub2012}
+\bibinfo{author}{G.~H. Golub}, \bibinfo{author}{C.~F. {Van Loan}},
+  \bibinfo{title}{{Matrix Computations}}, \bibinfo{edition}{fourth} ed.,
+  \bibinfo{publisher}{Johns Hopkins University Press},
+  \bibinfo{address}{Baltimore, MD}, \bibinfo{year}{2012}.
+%Type = Article
+\bibitem[{Lehoucq and Sorensen(1996)}]{Lehoucq1996}
+\bibinfo{author}{R.~B. Lehoucq}, \bibinfo{author}{D.~C. Sorensen},
+\newblock \bibinfo{title}{{Deflation techniques for an implicitly restarted
+  arnoldi iteration}},
+\newblock \bibinfo{journal}{SIAM J. Matrix Anal. Appl.} \bibinfo{volume}{17}
+  (\bibinfo{year}{1996}) \bibinfo{pages}{789--821}.
+%Type = Article
+\bibitem[{Sorensen(1990)}]{Sorensen1990}
+\bibinfo{author}{D.~C. Sorensen},
+\newblock \bibinfo{title}{{Implicit application of polynomial filters in a
+  k-step Arnoldi method}},
+\newblock \bibinfo{journal}{SIAM J. Matrix Anal. Appl.} \bibinfo{volume}{13}
+  (\bibinfo{year}{1990}) \bibinfo{pages}{357--385}.
+%Type = Article
+\bibitem[{Golub and Ye(2002)}]{Golub2002}
+\bibinfo{author}{G.~H. Golub}, \bibinfo{author}{Q.~Ye},
+\newblock \bibinfo{title}{{An inverse free preconditioned Krylov subspace
+  method for symmetric generalized eigenvalue problems}},
+\newblock \bibinfo{journal}{SIAM J. Sci. Comput.} \bibinfo{volume}{24}
+  (\bibinfo{year}{2002}) \bibinfo{pages}{312--334}.
+%Type = Article
+\bibitem[{Tsanas et~al.(2014)Tsanas, Little, Fox, and Ramig}]{Tsanas2014}
+\bibinfo{author}{A.~Tsanas}, \bibinfo{author}{M.~a. Little},
+  \bibinfo{author}{C.~Fox}, \bibinfo{author}{L.~O. Ramig},
+\newblock \bibinfo{title}{{Objective automatic assessment of rehabilitative
+  speech treatment in Parkinson's disease}},
+\newblock \bibinfo{journal}{IEEE Trans. Neural. Syst. Rehabil. Eng.}
+  \bibinfo{volume}{22} (\bibinfo{year}{2014}) \bibinfo{pages}{181--190}.
+%Type = Article
+\bibitem[{Won et~al.(2013)Won, Lim, Kim, and Rajaratnam}]{Won2013}
+\bibinfo{author}{J.-H. Won}, \bibinfo{author}{J.~Lim}, \bibinfo{author}{S.-J.
+  Kim}, \bibinfo{author}{B.~Rajaratnam},
+\newblock \bibinfo{title}{{Condition number regularized covariance
+  estimation}},
+\newblock \bibinfo{journal}{J. R. Stat. Soc. Series B Stat. Methodol.}
+  \bibinfo{volume}{75} (\bibinfo{year}{2013}) \bibinfo{pages}{427--450}.
+%Type = Article
+\bibitem[{Little et~al.(2009)Little, McSharry, Hunter, Spielman, and
+  Ramig}]{Little2009}
+\bibinfo{author}{M.~Little}, \bibinfo{author}{P.~McSharry},
+  \bibinfo{author}{E.~Hunter}, \bibinfo{author}{J.~Spielman},
+  \bibinfo{author}{L.~Ramig},
+\newblock \bibinfo{title}{{Suitability of dysphonia measurements for
+  telemonitoring of parkinson's disease}},
+\newblock \bibinfo{journal}{IEEE Trans. Biomed. Eng.} \bibinfo{volume}{56}
+  (\bibinfo{year}{2009}) \bibinfo{pages}{1015--1022}.
+%Type = Article
+\bibitem[{Ledoit and Wolf(2004)}]{Ledoit2004}
+\bibinfo{author}{O.~Ledoit}, \bibinfo{author}{M.~Wolf},
+\newblock \bibinfo{title}{{A well-conditioned estimator for large-dimensional
+  covariance matrices}},
+\newblock \bibinfo{journal}{J. Multivar. Anal.} \bibinfo{volume}{88}
+  (\bibinfo{year}{2004}) \bibinfo{pages}{365--411}.
+%Type = Article
+\bibitem[{Sun et~al.(2010)Sun, Todorovic, and Goodison}]{Sun2010}
+\bibinfo{author}{Y.~Sun}, \bibinfo{author}{S.~Todorovic},
+  \bibinfo{author}{S.~Goodison},
+\newblock \bibinfo{title}{{Local-learning-based feature selection for
+  high-dimensional data analysis}},
+\newblock \bibinfo{journal}{IEEE Trans. Pattern. Anal. Mach. Intell.}
+  \bibinfo{volume}{32} (\bibinfo{year}{2010}) \bibinfo{pages}{1610--1626}.
+%Type = Article
+\bibitem[{Chan(1999)}]{Chan1999}
+\bibinfo{author}{L.~Chan},
+\newblock \bibinfo{title}{{On portfolio optimization: forecasting covariances
+  and choosing the risk model}},
+\newblock \bibinfo{journal}{Rev. Financial Stud.} \bibinfo{volume}{12}
+  (\bibinfo{year}{1999}) \bibinfo{pages}{937--974}.
+%Type = Article
+\bibitem[{Fan et~al.(2013)Fan, Liao, and Mincheva}]{Fan2013}
+\bibinfo{author}{J.~Fan}, \bibinfo{author}{Y.~Liao},
+  \bibinfo{author}{M.~Mincheva},
+\newblock \bibinfo{title}{{Large covariance estimation by thresholding
+  principal orthogonal complements}},
+\newblock \bibinfo{journal}{J. R. Stat. Soc. Series B Stat. Methodol.}
+  \bibinfo{volume}{75} (\bibinfo{year}{2013}) \bibinfo{pages}{603--680}.
+%Type = Article
+\bibitem[{Cai et~al.(2011)Cai, Liu, and Luo}]{Cai2011}
+\bibinfo{author}{T.~Cai}, \bibinfo{author}{W.~Liu}, \bibinfo{author}{X.~Luo},
+\newblock \bibinfo{title}{{A constrained l1 minimization approach to sparse
+  precision matrix estimation}},
+\newblock \bibinfo{journal}{J. Amer. Stat. Assoc.} \bibinfo{volume}{106}
+  (\bibinfo{year}{2011}) \bibinfo{pages}{594--607}.
+%Type = Article
+\bibitem[{Meinshausen and B{\"{u}}hlmann(2006)}]{Meinshausen2006}
+\bibinfo{author}{N.~Meinshausen}, \bibinfo{author}{P.~B{\"{u}}hlmann},
+\newblock \bibinfo{title}{{High-dimensional graphs and variable selection with
+  the Lasso}},
+\newblock \bibinfo{journal}{Ann. Stat.} \bibinfo{volume}{34}
+  (\bibinfo{year}{2006}) \bibinfo{pages}{1436--1462}.
+%Type = Article
+\bibitem[{Peng et~al.(2009)Peng, Wang, Zhou, and Zhu}]{Peng2009}
+\bibinfo{author}{J.~Peng}, \bibinfo{author}{P.~Wang},
+  \bibinfo{author}{N.~Zhou}, \bibinfo{author}{J.~Zhu},
+\newblock \bibinfo{title}{{Partial correlation estimation by joint sparse
+  regression models}},
+\newblock \bibinfo{journal}{J. Amer. Stat. Assoc.} \bibinfo{volume}{104}
+  (\bibinfo{year}{2009}) \bibinfo{pages}{735--746}.
+%Type = Techreport
+\bibitem[{Friedman et~al.(2010)Friedman, Hastie, and Tibshirani}]{Friedman2010}
+\bibinfo{author}{J.~Friedman}, \bibinfo{author}{T.~Hastie},
+  \bibinfo{author}{R.~Tibshirani}, \bibinfo{title}{{Applications of the lasso
+  and grouped lasso to the estimation of sparse graphical models}},
+  \bibinfo{type}{Technical Report}, Stanford University,
+  \bibinfo{address}{Stanford, CA}, \bibinfo{year}{2010}. \URLprefix
+  \url{statweb.stanford.edu/~tibs/ftp/ggraph.pdf}.
+%Type = Article
+\bibitem[{Khare et~al.(2015)Khare, Oh, and Rajaratnam}]{Khare2015}
+\bibinfo{author}{K.~Khare}, \bibinfo{author}{S.-Y. Oh},
+  \bibinfo{author}{B.~Rajaratnam},
+\newblock \bibinfo{title}{{A convex pseudolikelihood framework for high
+  dimensional partial correlation estimation with convergence guarantees}},
+\newblock \bibinfo{journal}{J. R. Stat. Soc. Series B Stat. Methodol.}
+  \bibinfo{volume}{77} (\bibinfo{year}{2015}) \bibinfo{pages}{803--825}.
+%Type = Article
+\bibitem[{Mazumder and Hastie(2012)}]{Mazumder2012}
+\bibinfo{author}{R.~Mazumder}, \bibinfo{author}{T.~Hastie},
+\newblock \bibinfo{title}{{The graphical lasso: New insights and
+  alternatives}},
+\newblock \bibinfo{journal}{Electron. J. Stat.} \bibinfo{volume}{6}
+  (\bibinfo{year}{2012}) \bibinfo{pages}{2125--2149}.
+%Type = Article
+\bibitem[{Friedman et~al.(2008)Friedman, Hastie, and Tibshirani}]{Friedman2008}
+\bibinfo{author}{J.~Friedman}, \bibinfo{author}{T.~Hastie},
+  \bibinfo{author}{R.~Tibshirani},
+\newblock \bibinfo{title}{{Sparse inverse covariance estimation with the
+  graphical lasso}},
+\newblock \bibinfo{journal}{Biostatistics} \bibinfo{volume}{9}
+  (\bibinfo{year}{2008}) \bibinfo{pages}{432--441}.
+%Type = Article
+\bibitem[{Witten et~al.(2011)Witten, Friedman, and Simon}]{Witten2011}
+\bibinfo{author}{D.~M. Witten}, \bibinfo{author}{J.~H. Friedman},
+  \bibinfo{author}{N.~Simon},
+\newblock \bibinfo{title}{{New insights and faster computations for the
+  graphical lasso}},
+\newblock \bibinfo{journal}{J. Comput. Graph. Stat.} \bibinfo{volume}{20}
+  (\bibinfo{year}{2011}) \bibinfo{pages}{892--900}.
+%Type = Article
+\bibitem[{Kwon et~al.(2017)Kwon, Choi, Park, Ziegler, and Paik}]{Kwon2016}
+\bibinfo{author}{Y.~Kwon}, \bibinfo{author}{Y.-G. Choi},
+  \bibinfo{author}{T.~Park}, \bibinfo{author}{A.~Ziegler},
+  \bibinfo{author}{M.~C. Paik},
+\newblock \bibinfo{title}{{Generalized estimating equations with stabilized
+  working correlation structure}},
+\newblock \bibinfo{journal}{Comput. Stat. Data Anal.} \bibinfo{volume}{106}
+  (\bibinfo{year}{2017}) \bibinfo{pages}{1--11}.
+
+\end{thebibliography}
