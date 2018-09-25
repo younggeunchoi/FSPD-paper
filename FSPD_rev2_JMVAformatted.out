@@ -1,0 +1,24 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Covariance regularization and PDness}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Non-PDness of regularized covariance matrix estimators}{section.2}% 3
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Thresholding estimators}{subsection.2.1}% 4
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Banding estimators}{subsection.2.1}% 5
+\BOOKMARK [2][-]{subsection.2.2}{Adding PDness to structural \(sparse\) regularization}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{The linear shrinkage for fixed support positive definiteness \(FSPD\)}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Distance minimization}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{The choice of }{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.3}{The choice of }{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.4}{Statistical properties of the FSPD estimator}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.5}{Computation}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{Simulation study}{}% 13
+\BOOKMARK [2][-]{subsection.4.1}{Empirical risk}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.2}{Computation time}{section.4}% 15
+\BOOKMARK [1][-]{section.5}{Two applications}{}% 16
+\BOOKMARK [2][-]{subsection.5.1}{Linear minimax classifier applied to speech recognition}{section.5}% 17
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Linear minimax probability machine}{subsection.5.1}% 18
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Example: Speech recognition}{subsection.5.1}% 19
+\BOOKMARK [2][-]{subsection.5.2}{Markowitz portfolio optimization}{section.5}% 20
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Minimum-variance portfolio allocation and short-sale}{subsection.5.2}% 21
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Example: Dow Jones stock return}{subsection.5.2}% 22
+\BOOKMARK [1][-]{section.6}{Estimation of positive definite precision matrices}{}% 23
+\BOOKMARK [1][-]{section.7}{Concluding remarks}{}% 24
